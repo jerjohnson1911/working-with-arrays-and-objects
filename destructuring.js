@@ -21,7 +21,10 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const {color} = carDetails
+const {make} = carDetails
+const  {model} = carDetails
+const {year} = carDetails
 
 
 
@@ -33,8 +36,12 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
+function greeting(obj) {
+
+  const {firstName} = obj
+  const {lastName} = obj
+  const {title} = obj
+
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -52,9 +59,17 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables.
   Sum up the values and return the total number.
 */
+// // obj {
+//   utah:
+//   california:
+//   texas:
+//   arizona:
+// }
+// function totalPopulation(obj){
+//   return obj.utah + obj.california + obj.texas + obj.arizona
+// }
 
-//Code Here
-
+const totalPopulation = (obj => obj.utah + obj.california + obj.texas + obj.arizona)
 
 
 ////////// PROBLEM 4 //////////
@@ -67,7 +82,14 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj){
+  const nutrition = []
+  const {carb} = obj
+  const {fat} = obj
+  const {protein} = obj
+  nutrition.push(carb, fat, protein) 
+  return nutrition
+}
 
 
 
@@ -77,7 +99,7 @@ function greeting( obj ) {
   Now we will use object destructuring as the function's parameter instead of destructuring the object inside of the function declaration.
   Example:
     function example( {one, two, three} ) {
-      return one + two + three
+      
     }
 
   Write a function called largeNumbers that will take a destructured object as it's parameter.
@@ -85,7 +107,16 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers({first, second, third}){
+  if(first < second && first < third){
+    return first
+  }else if(second < first && second < third){
+    return second
+  }else if(third < first && third < second){
+    return third
+  }
+}
+
 
 
 
@@ -97,6 +128,12 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups({a, b, c}){
+  if(a.lenth > b.length && a.length > c.length){
+    return a
+  }else if(b.length > a.length && b.length > c.length){
+    return b
+  } else return c
+}
 
 
